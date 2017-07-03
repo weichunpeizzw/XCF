@@ -58,7 +58,13 @@ $(function () {
         user.setEmail(inpEmail.value);
         user.signUp().then(function (loginedUser) {
             console.log(loginedUser);
-        }, function (error) {});
+            alert('注册成功,请前往登录');
+            window.location.href="index.html";
+        }, function (error) {
+            if(error.code == 202) {
+				mui.toast('用户名已被占用');
+			}
+        });
     })
 
 })
