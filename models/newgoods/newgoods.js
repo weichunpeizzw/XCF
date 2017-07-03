@@ -1,56 +1,59 @@
-$(function() {
-	
+$(function () {
+
 	$.ajax({
-		type:"get",
-		url:"newgoodes.php",
-		async:true,
+		type: "get",
+		url: "newgoodes.php",
+		async: true,
 		dataType: 'json',
-		success:function(data){
-		
-			var arr=[];
-			for(var i in data){
-				if(data[i].is_hot=='9'){
+		success: function (data) {
+
+			var arr = [];
+			for (var i in data) {
+				if (data[i].is_hot == '9') {
 					arr.push(data[i]);
 				}
 			}
 			console.log(arr);
-			for(var k = 0; k < arr.length; k++) {
-			var str = '<li>' +
-				'<div class="goods-img">' +
-				'<a href="#">' +
-				'<img src="images/' + arr[k].pimage + '"/>' +
-				'</a>' +
-				'</div>' +
-				'<p class="goods-name"><a href="#">' + arr[k].pname + '</a></p>' +
-				'<p class="goods-price"><span>价格</span><span>&yen;' + arr[k].shop_price + '</span></p>' +
-				'</li>'
-			$(".goods-show ul").append($(str));
-		}
-
+			for (var k = 0; k < arr.length; k++) {
+				var str = '<li>' +
+					'<div class="goods-img">' +
+					'<a href="#">' +
+					'<img src="images/' + arr[k].pimage + '"/>' +
+					'</a>' +
+					'</div>' +
+					'<p class="goods-name"><a href="#">' + arr[k].pname + '</a></p>' +
+					'<p class="goods-price"><span>价格</span><span>&yen;' + arr[k].shop_price + '</span></p>' +
+					'</li>'
+				$(".goods-show ul").append($(str));
+				for(var j=0;j<arr.length;j++){
+					
+			}
+			}
+			
 		}
 	});
 	var data = [
-		['5_sx28.jpg', '虾饺', '19.80'],
-		['5_sx28.jpg', '芝麻汤圆', '7.70'],
-		['5_sx28.jpg', '火锅香肠', '9.90'],
-		['5_sx28.jpg', '香菇素菜包', '11.50'],
-		['5_sx28.jpg', '鱼丸', '9.5'],
-		['5_sx28.jpg', '包心贡丸', '9.50'],
-		['5_sx28.jpg', '原味飞饼', '10.50'],
-		['5_sx28.jpg', '白菜煎饺', '7.50'],
-		['5_sx28.jpg', '虾仁三鲜大混沌', '32.00'],
-		['5_sx28.jpg', '鲜美虾皇云吞', '32.00'],
-		['5_sx28.jpg', '芝麻汤圆', '7.50'],
-		['5_sx28.jpg', '南翔小笼包', '19.80'],
-		['5_sx28.jpg', '南翔春卷皮', '5.20'],
-	],
+			['5_sx28.jpg', '虾饺', '19.80'],
+			['5_sx28.jpg', '芝麻汤圆', '7.70'],
+			['5_sx28.jpg', '火锅香肠', '9.90'],
+			['5_sx28.jpg', '香菇素菜包', '11.50'],
+			['5_sx28.jpg', '鱼丸', '9.5'],
+			['5_sx28.jpg', '包心贡丸', '9.50'],
+			['5_sx28.jpg', '原味飞饼', '10.50'],
+			['5_sx28.jpg', '白菜煎饺', '7.50'],
+			['5_sx28.jpg', '虾仁三鲜大混沌', '32.00'],
+			['5_sx28.jpg', '鲜美虾皇云吞', '32.00'],
+			['5_sx28.jpg', '芝麻汤圆', '7.50'],
+			['5_sx28.jpg', '南翔小笼包', '19.80'],
+			['5_sx28.jpg', '南翔春卷皮', '5.20'],
+		],
 		lowPrice,
 		heighPrice,
 		productQuery;
 	//价格排序
-	$(".goods-order tr>td:nth-of-type(2)").on('click', function() {
+	$(".goods-order tr>td:nth-of-type(2)").on('click', function () {
 		$(".goods-show ul").html('');
-		if($(this).find('img').attr('src') == 'images/down.gif') {
+		if ($(this).find('img').attr('src') == 'images/down.gif') {
 			$(this).find('img').attr('src', 'images/up.gif');
 			orderUp();
 
@@ -61,39 +64,39 @@ $(function() {
 		render(data);
 	});
 	//价格筛选
-	$("#price-filter").on('click',function(){
-		lowPrice=$("#low-price").val();
-		heighPrice=$("#heigh-price").val();
-		if(lowPrice&&heighPrice){
+	$("#price-filter").on('click', function () {
+		lowPrice = $("#low-price").val();
+		heighPrice = $("#heigh-price").val();
+		if (lowPrice && heighPrice) {
 			$(".goods-show ul").html('');
-			var res=priceFilter(lowPrice,heighPrice);
+			var res = priceFilter(lowPrice, heighPrice);
 			render(res);
-		}else{
+		} else {
 			alert('请输入价格区间')
 		}
 	})
 	//查询具体商品
-	$("#query-box").on('click',function(){
-		productQuery=$("#product-query").val();
-		if(productQuery){
+	$("#query-box").on('click', function () {
+		productQuery = $("#product-query").val();
+		if (productQuery) {
 			$(".goods-show ul").html('');
-			var res=queryProduct(productQuery);
+			var res = queryProduct(productQuery);
 			console.log(res);
-			if(res){
+			if (res) {
 				render(res);
-			}else{
+			} else {
 				console.log(111);
-//				$(".goods-show ul").text('暂无此商品记录');
+				//				$(".goods-show ul").text('暂无此商品记录');
 				alert('暂无此商品记录');
 			}
-		}else{
+		} else {
 			alert('请输入商品名');
 		}
-		
+
 	})
 	//页面渲染函数
 	function render(data) {
-		for(var i = 0; i < data.length; i++) {
+		for (var i = 0; i < data.length; i++) {
 			var str = '<li>' +
 				'<div class="goods-img">' +
 				'<a href="#">' +
@@ -110,10 +113,10 @@ $(function() {
 
 	//数据排序 从小到大
 	function orderUp() {
-		for(var i = 0; i < data.length - 1; i++) {
-			for(var j = 0; j < data.length - i - 1; j++) {
+		for (var i = 0; i < data.length - 1; i++) {
+			for (var j = 0; j < data.length - i - 1; j++) {
 				//			console.log(data[j][2]);
-				if(parseFloat(data[j][2]) > parseFloat(data[j + 1][2])) {
+				if (parseFloat(data[j][2]) > parseFloat(data[j + 1][2])) {
 					var tmp = data[j];
 					data[j] = data[j + 1];
 					data[j + 1] = tmp;
@@ -122,11 +125,11 @@ $(function() {
 		}
 	}
 	//数据排序 从大到小
-	function orderDown(){
-		for(var i = 0; i < data.length - 1; i++) {
-			for(var j = 0; j < data.length - i - 1; j++) {
+	function orderDown() {
+		for (var i = 0; i < data.length - 1; i++) {
+			for (var j = 0; j < data.length - i - 1; j++) {
 				//			console.log(data[j][2]);
-				if(parseFloat(data[j][2]) < parseFloat(data[j + 1][2])) {
+				if (parseFloat(data[j][2]) < parseFloat(data[j + 1][2])) {
 					var tmp = data[j];
 					data[j] = data[j + 1];
 					data[j + 1] = tmp;
@@ -135,25 +138,24 @@ $(function() {
 		}
 	}
 	//数据筛选
-	function priceFilter(arg1,arg2){
-		var res=[];
-		for(var i=0;i<data.length;i++){
-			if(arg1<=data[i][2]&&data[i][2]<=arg2){
+	function priceFilter(arg1, arg2) {
+		var res = [];
+		for (var i = 0; i < data.length; i++) {
+			if (arg1 <= data[i][2] && data[i][2] <= arg2) {
 				res.push(data[i]);
 			}
 		}
 		return res;
 	}
-	
-	function queryProduct(arg){
+
+	function queryProduct(arg) {
 		console.log(arg);
-	var res=[];
-		for(var i=0;i<data.length;i++){
-			if(arg==data[i][1]){
+		var res = [];
+		for (var i = 0; i < data.length; i++) {
+			if (arg == data[i][1]) {
 				res.push(data[i]);
 			}
 		}
 		return res;
-}
+	}
 })
-
