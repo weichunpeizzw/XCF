@@ -19,9 +19,9 @@ while ($row=mysql_fetch_array($query)) {
 		
       );
 }
-//if($flag){
-// echo json_encode($sayList);
-//}else{
-//	echo true;
-//}
+if($flag){
+echo json_encode($sayList);
+}else{
+	echo true;
+}
 ?>
