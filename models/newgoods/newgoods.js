@@ -1,4 +1,34 @@
 $(function() {
+	
+	$.ajax({
+		type:"get",
+		url:"newgoodes.php",
+		async:true,
+		dataType: 'json',
+		success:function(data){
+		
+			var arr=[];
+			for(var i in data){
+				if(data[i].is_hot=='9'){
+					arr.push(data[i]);
+				}
+			}
+			console.log(arr);
+			for(var k = 0; k < arr.length; k++) {
+			var str = '<li>' +
+				'<div class="goods-img">' +
+				'<a href="#">' +
+				'<img src="images/' + arr[k].pimage + '"/>' +
+				'</a>' +
+				'</div>' +
+				'<p class="goods-name"><a href="#">' + arr[k].pname + '</a></p>' +
+				'<p class="goods-price"><span>价格</span><span>&yen;' + arr[k].shop_price + '</span></p>' +
+				'</li>'
+			$(".goods-show ul").append($(str));
+		}
+
+		}
+	});
 	var data = [
 		['5_sx28.jpg', '虾饺', '19.80'],
 		['5_sx28.jpg', '芝麻汤圆', '7.70'],
@@ -76,7 +106,7 @@ $(function() {
 			$(".goods-show ul").append($(str));
 		}
 	}
-	render(data);
+	// render(data);
 
 	//数据排序 从小到大
 	function orderUp() {

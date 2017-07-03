@@ -41,7 +41,6 @@ $('.closebtn').click(function () {
 //初始化
 var APP_ID = 'u7fgLS1Gn227M5g1GmyxmD0a-gzGzoHsz';
 var APP_KEY = 'YcupbpcwnPyWSzUjCIoe4UoK';
-var AV = require('leancloud-storage');  
 
 AV.init({
   appId: APP_ID,
@@ -52,11 +51,11 @@ $("#Registration").on('click',function(e){
     // 新建 AVUser 对象实例
     var user = new AV.User();
 // 设置用户名
-    user.setUsername(inpMobile.val());
+    user.setUsername(inpMobile.value);
 // 设置密码
-    user.setPassword(Password.val());
+    user.setPassword(Password.value);
 // 设置邮箱
-    user.setEmail(inpEmail.val());
+    user.setEmail(inpEmail.value);
     user.signUp().then(function (loginedUser) {
         console.log(loginedUser);
     }, function (error) {
