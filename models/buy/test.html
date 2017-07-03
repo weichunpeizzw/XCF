@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .active{
+            background-color: red;
+            border-bottom: none;
+        }
+    </style>
+    <link rel="stylesheet/less" href="test.less" />
+    <script src="../../common/js/less.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../common/js/jquery-2.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="productsTable">
+    <div class="tables">
+        <ul>
+            <li><a href="javascript:;" data-target="goods-information">商品信息</a></li>
+            <li><a href="javascript:;" data-target="sales-history">购买记录</a></li>
+            <li><a href="javascript:;" data-target="customer-reviews">顾客评论</a></li>
+            <li><a href="javascript:;" data-target="answer-question">买家问答</a></li>
+        </ul>
+    </div>
+    <section class="" id="goods-information">
+        <span>商品描述</span>
+        <!--<img src="img/20160605022936377_381z.jpg" alt=""/>-->
+    </section>
+    <section class="" id="sales-history">
+        <h2>购买记录</h2>
+        <ul>
+            <li>购买人</li>
+            <li>会员级别</li>
+            <li>数量</li>
+            <li>属性</li>
+            <li>购买时间</li>
+        </ul>
+        <div class="recommend">
+            <span>
+            上一个:<a href="">包馅小小芝麻汤圆</a>
+            </span>
+            <span>
+            下一个:<a href=""> 虾仁小馄饨</a>
+            </span>
+        </div>
+    </section>
+    <section class="" id="customer-reviews">
+        <h2>顾客评论</h2>
+        <div class="">
+            <span>商品满意度:</span>
+            <a href=""></a>
+        </div>
+
+        <div class="recommend">
+            <span>
+            上一个:<a href="">包馅小小芝麻汤圆</a>
+            </span>
+            <span>
+            下一个:<a href=""> 虾仁小馄饨</a>
+            </span>
+        </div>
+    </section>
+    <section class="" id="answer-question">
+        <h2>买家问答</h2>
+
+        <div class="recommend">
+        <span>
+        上一个:<a href="">包馅小小芝麻汤圆</a>
+        </span>
+        <span>
+        下一个:<a href=""> 虾仁小馄饨</a>
+        </span>
+        </div>
+    </section>
+    </div>
+</body>
+<script>
+    $(".productsTable .tables li").on("click",function(){
+        $(this).siblings().removeClass("active");
+        $(this).addClass("active");
+        var target=$(this).children().dataset['target'];
+        $("#"+target).css("display","bolck");
+    })
+</script>
+</html>

@@ -1,0 +1,379 @@
+.prodcuts-detail{
+    overflow: hidden;
+    height: 4000px;
+    //background-color: #cccccc;
+    .product-left{
+        margin-top: 535px;
+        width: 187px;
+        height: 645px;
+        //background: red;
+        img{
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    }
+    .product-right{
+        margin-top: 10px;
+        width: 900px;
+        //background: pink;
+        .product-show{
+            .prodcuts-detailLeft{
+                width: 300px;
+                height: 300px;
+                padding: 10px;
+                //background-color: yellowgreen;
+                #smallBox{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid #cccccc;
+                    img{
+                        display: inline-block;
+                        width: 300px;
+                        height: 300px;
+                    }
+                    #mask{
+                        width: 80px;
+                        height: 80px;
+                        border: 1px solid black;
+                        background: rgba(255, 255, 0, 0.4);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        cursor: move;
+                        display: none;
+                    }
+                    #bigBox{
+                        z-index: 10;
+                        width: 300px;
+                        height: 300px;
+                        border: 1px solid black;
+                        background: transparent;
+                        position: absolute;
+                        top: 0px;
+                        right: -100px;
+                        display: none;
+                        overflow: hidden;
+                        img{
+                            width: 600px;
+                            height: 600px;
+                            position: absolute;
+                        }
+                    }
+
+
+                }
+
+
+            }
+            .prodcuts-detailRight{
+                width: 556px;
+                margin-left: 20px;
+                line-height: 34px;
+                h2{
+                    font-size: 20px;
+                    line-height: 33px;
+                    border-bottom: 1px solid #E2E2E2;
+                }
+                .prodcutsPrice{
+                    span{
+                        padding-left: 5px;
+                        color: #ff5022;;
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
+                }
+                .prodcutsSize{
+                    position: relative;
+                    span{
+                        display: inline-block;
+                        width: 50px;
+                        height: 24px;
+                    }
+                    a{
+                        border: 1px solid #DDDDDD;
+                        padding: 5px 8px;
+
+                    }
+                    .checkedbox{
+                        width: 8px;
+                        height: 8px;
+                        background:url("img/wp-new-products-detail-select.gif");
+                        position: absolute;
+                        left: 53px;
+                        top: 21px;
+                        display: none;
+                    }
+                    .checkedbox1{
+                        width: 8px;
+                        height: 8px;
+                        background:url("img/wp-new-products-detail-select.gif");
+                        position: absolute;
+                        left: 137px;
+                        top: 21px;
+                        display: none;
+                    }
+                }
+                .prodcutsNumber{
+                    >span{
+                        display: inline-block;
+                        width: 50px;
+                        height: 24px;
+                    }
+                    .controlNumber{
+                        display: inline-block;
+                        a{
+                            display: inline-block;
+                            width: 18px;
+                            height: 18px;
+                            vertical-align: middle;
+                        }
+                        a:first-of-type{
+                            background:url("img/wp-new-cart-background.png") no-repeat -68px -3px;
+                        }
+                        a:last-of-type{
+                            background:url("img/wp-new-cart-background.png") no-repeat -88px -3px;
+                        }
+                        input{
+                            width: 50px;
+                            height: 20px;
+                            text-align: center;
+                            border: 1px solid #cccccc;
+                        }
+                    }
+                    .storeNumber{
+                        display: inline-block;
+                        margin-left: 5px;
+                    }
+
+                }
+
+                .prodcutsPay{
+                    >span{
+                        text-align: center;
+                        font-size: 16px;
+                        display: inline-block;
+                        width: 120px;
+                        height: 35px;
+                        border: 1px solid #CACACA;
+                        margin-top: 25px;
+                        cursor: not-allowed;
+                    }
+                    >span:first-of-type{
+                        background-color: #FF3400;
+                        color: white;
+                        margin-right: 13px;
+
+                    }
+                    >span:last-of-type{
+                        background-color: #E2E2E2;
+                        color: #6F6F6F;
+                    }
+                }
+            }
+        }
+        .productsTable{
+            margin-top: 18px;
+            width: 900px;
+            height: 500px;
+            //background-color: chartreuse;
+            .tables{
+                height: 37px;
+                border-bottom: 1px solid #AAA099;
+                ul{
+                    padding-left: 10px;
+                    li{
+                        float: left;
+                        margin-right: 1px;
+                        a{
+                           display: inline-block;
+                            width: 132px;
+                            height: 37px;
+                            border: 1px solid #ABA19A;
+                            border-bottom: none;
+                            text-align: center;
+                            font-size: 16px;
+                            color: #5A5A5A;
+                            line-height: 37px;
+                        }
+                    }
+                }
+
+            }
+            #content{
+                margin-top: 10px;
+                #tab1{
+                    border: 1px solid red;
+                    text-align: center;
+                    h3{
+                        text-align: left;
+                        margin: 10px 0 20px 10px;
+                    }
+                }
+                #tab2,#tab3,#tab4{
+
+                    h2{
+                        font-weight: bold;
+                        line-height: 40px;
+                        border-top: 2px solid #B0B0B0;
+                        padding-left: 10px;
+                    }
+                    .recommend{
+                        padding-left: 10px;
+                        span{
+                            display:block;
+                            line-height: 26px;
+                        }
+                    }
+                }
+                #tab2{
+                   ul{
+                       height: 30px;
+                       border-bottom: 1px solid #D7D7D7;
+                       line-height: 30px;
+                     li{
+                         float: left;
+                        padding: 0 120px 0 15px;
+                         font-weight: bold;
+                     }
+                   }
+                   .pagenum{
+                       text-align: right;
+                       padding:10px 10px 30px;
+
+                   }
+                }
+                #tab3{
+                    >div{
+                        padding-left: 10px;
+                    }
+                    .comments-total{
+                        margin: 10px 0;
+                       i{
+                           display: inline-block;
+                           width: 124px;
+                           height: 24px;
+                           background: url("img/stars-show-b.jpg") no-repeat 0px -200px;
+                           vertical-align: middle;
+                           margin: 0 10px;
+                       }
+                        >span:nth-last-child{
+                            color: #f60;
+                        }
+
+                    }
+                    .comments-list{
+                      .tab-main{
+                          margin-bottom: 10px;
+                          ul{
+                              border: 1px solid #cccccc;
+                              line-height: 30px;
+                              li{
+                                  float: left;
+                                  margin: 0 20px;
+                              }
+                          }
+                      }
+                      .tab-con{
+                          .comment-item{
+                              padding: 10px;
+                              border: 1px solid #cccccc;
+                              margin-bottom: 20px;
+                            .user-column{
+                                //background-color: pink;
+                                width: 140px;
+                                float: left;
+                                .user-info{
+                                    img{
+                                        width: 25px;
+                                        height: 25px;
+                                    }
+                                    span{
+                                        margin-left: 10px;
+                                    }
+                                }
+                                .user-level{
+
+                                        margin-top: 5px;
+
+                                }
+
+                            }
+                            .comment-column{
+                                //background-color: deepskyblue;
+                                margin-left: 150px;
+                                overflow: hidden;
+                               .comment-star{
+                                   i{
+                                       display: inline-block;
+                                       width: 124px;
+                                       height: 24px;
+                                       background: url("img/stars-show-b.jpg") no-repeat 0px -200px;
+                                       vertical-align: middle;
+                                       margin: 0 10px;
+                                   }
+                                  }
+                                p {
+                                    padding: 10px 0;
+                                }
+
+
+                               .comment-message{
+                                    >div{
+                                        display: inline-block;
+                                    }
+                                   .order-info{
+                                       float: left;
+                                       span{
+                                           margin-right: 20px;
+                                       }
+                                   }
+                                   .comment-op{
+                                       float: right;
+                                       a{
+                                           margin-left: 25px;
+
+                                           i{
+                                               display: inline-block;
+                                               width: 16px;
+                                               height: 16px;
+                                               background: url("img/__sprite.png");
+                                               vertical-align: middle;
+
+                                           }
+                                       }
+                                       a:nth-of-type(2){
+                                           i{
+                                               background-position: -32px -34px;
+                                           }
+                                       }
+                                       a:nth-of-type(3){
+                                           i{
+                                               background-position: -48px -34px;
+                                           }
+                                       }
+                                   }
+                               }
+                            }
+                          }
+                      }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
