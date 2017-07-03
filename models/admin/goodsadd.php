@@ -9,7 +9,7 @@ $pdate=$_POST['pdate'];
 $cid=$_POST['cid'];
 $pimage=".jpg";
  $sql="insert into xcf_product(pid,pname,pnum,shop_price,pdesc,pdate,cid,pimage) values('$pid','$pname','$pnum','$shop_price','$pdesc','$pdate','$cid','$pimage')";
-  $ret=mysql_query($sql,$link);
+  $ret=mysqli_query($link,$sql);
              if ($ret === false) {
     die("载入失败: " . mysql_error($link));
 } else {

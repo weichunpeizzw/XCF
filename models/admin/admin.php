@@ -1,8 +1,8 @@
 <?php
  require_once '../../common/comment/config.php';
- $query=mysql_query("select * from xcf_product ");
+ $result=$link->query("select * from xcf_product");
     $flag = false;
-while ($row=mysql_fetch_array($query)) {
+while ($row=$result->fetch_assoc()) {
 	$flag = true;
 	$sayList[] = array(
 
