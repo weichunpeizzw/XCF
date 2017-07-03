@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购买页面</title>
+		<style>
+			.active{
+				background-color: red;
+				border-bottom: none;
+			}
+			.current{
+				background: #cccccc;
+			}
+
+			.item{
+				display: none;
+			}
+			.show{
+				display: block !important;
+			}
+			.selectbox{
+				border-color:#FF3500 !important;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../../common/css/reset.css"/>
+		<link rel="stylesheet/less" href="../../common/css/com-header.less" />
+		<link rel="stylesheet/less" href="../../common/css/com-footer.less" />
+		<link rel="stylesheet/less" href="buy.less" />
+		<script src="../../common/js/less.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../common/js/jquery-2.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src='buy.js'></script>
+	</head>
+	<body>
+		<!--头部-->
+		<header>
+			<div class="banxin h-content">
+				<div class="h-left fl">
+					<a href="#" class="h-login">登录</a>
+					|
+					<a href="#" class="h-register">注册</a>
+				</div>
+				<div class="h-right fr">
+					<div class="h-car fl">
+						<i class="h-car-icon"></i>
+						<a href="#" class="h-car-message">购物车<span class="colorRed">0</span>商品</a>
+						<div class="h-online fr">
+							<img src="../../common/images/offline_qq_42.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="logo banxin">
+			<div class="logo-img fl">
+				<img src="../../common/images/logo.png" />
+			</div>
+			<div class="logo-mess fl">
+				<img src="../../common/images/5f0n.png" />
+			</div>
+			<div class="tel">
+				<em>400&nbsp; 6188&nbsp; 527</em>
+			</div>
+			<div class="logo-search fr clearfix">
+				<button>搜索</button>
+				<input type="search" name="" id="" value="" />
+				<div class="hot-search">
+					<span>热门搜索:</span>
+					<a href="#">芝麻汤圆</a>
+					<a href="#">水饺</a>
+					<a href="#">鲜肉馄饨</a>
+				</div>
+			</div>
+		</div>
+		<nav>
+			<div class="banxin nav-content">
+				<div class="nav-classify fl">
+					<h3>全部商品分类</h3>
+					<img src="../../common/images/classify.png" />
+					<div class="detail-classify">
+						<ul>
+							<li>
+								<a href="#">湾仔码头</a><b>></b>
+							</li>
+							<li>
+								<a href="#">避风塘</a><b>></b></li>
+							<li>
+								<a href="#">池客坊</a><b>></b></li>
+							<li>
+								<a href="#">沈大成</a><b>></b></li>
+							<li>
+								<a href="#">思念</a><b>></b></li>
+							<li>
+								<a href="#">南翔</a><b>></b></li>
+							<li>
+								<a href="#">龙凤</a><b>></b></li>
+							<li>
+								<a href="#">桂冠</a><b>></b></li>
+							<li>
+								<a href="#">安井</a><b>></b></li>
+							<li>
+								<a href="#">其他</a><b>></b></li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav-list fl">
+					<ul>
+						<li class="active">
+							<a href="#">首页</a>
+						</li><li>
+						<a href="#">新品上架</a>
+					</li><li>
+						<a href="#">促销活动</a>
+					</li><li>
+						<a href="#">反馈信息</a>
+					</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--商品展示-->
+		<div class="prodcuts-detail banxin">
+			<div class="product-left fl">
+				<a href="javascript:void(0)">
+					<img src="img/50_6eyl.jpg" alt=""/>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/49_kngt.jpg" alt=""/>
+				</a>
+			</div>
+			<div class="product-right fr clearfix">
+				<!--商品购买小块-->
+				<div class="product-show clearfix">
+					<div class="prodcuts-detailLeft fl">
+						<div id="smallBox">
+							<img src="img/1_jrqi.jpg" alt="" />
+							<div id="mask">
+
+							</div>
+							<div id="bigBox">
+								<img src="img/2_jrqi.jpg" alt=""/>
+							</div>
+						</div>
+					</div>
+					<div class="prodcuts-detailRight fl">
+						<h2>芝麻汤圆</h2>
+						<div class="prodcutsPrice">
+							<p>价格:<span>¥90.00</span></p>
+						</div>
+						<div class="prodcutsSize">
+							<span>规格:</span>
+							<a href="" data="0">500g*20/箱</a>
+							<a href="" data="1">500g/袋</a>
+							<div class="checkedbox"></div>
+							<div class="checkedbox1"></div>
+						</div>
+						<div class="prodcutsNumber">
+							<span>数量:</span>
+							<div class="controlNumber">
+								<a href=""></a>
+								<input type="text" value="1"/>
+								<a href=""></a>
+							</div>
+							<div class="storeNumber">
+								<span>(库存</span>
+								<b>10)</b>
+							</div>
+						</div>
+						<div class="prodcutsPay">
+							<span>立即购买</span>
+							<span>加入购物车</span>
+						</div>
+					</div>
+				</div>
+				<!--商品信息购买记录评论-->
+				<div class="productsTable">
+					<!-- tab栏 -->
+					<div class="tables">
+						<ul id="tabs">
+							<li class="current"><a href="#" title="tab1">商品信息</a></li>
+							<li><a href="#" title="tab2">购买记录</a></li>
+							<li><a href="#" title="tab3">顾客评论</a></li>
+							<li><a href="#" title="tab4">买家问答</a></li>
+						</ul>
+					</div>
+					<!-- 对应显示内容 -->
+					<div id="content">
+						<div id="tab1" class="item show">
+							<h3>商品描述</h3>
+							<img src="img/20160605022936377_381z.jpg" alt=""/>
+						</div>
+						<div id="tab2" class="item">
+							<h2>购买记录</h2>
+							<ul>
+								<li>购买人</li>
+								<li>会员级别</li>
+								<li>数量</li>
+								<li>属性</li>
+								<li>购买时间</li>
+							</ul>
+							<div class="pagenum">
+								总计有0条记录
+							</div>
+							<div class="recommend">
+								<span>
+									上一个:<a href="">包馅小小芝麻汤圆</a>
+								</span>
+								<span>
+									下一个:<a href=""> 虾仁小馄饨</a>
+								</span>
+							</div>
+						</div>
+						<div id="tab3" class="item">
+							<h2>顾客评论</h2>
+							<div class="comments-total">
+								<span>商品满意度:</span>
+								<i></i>
+								<span>5分</span>
+							</div>
+							<div class="comments-list">
+								<div class="tab-main">
+									<ul class="clearfix">
+										<li class="current"><a href="" title="comment-0">全部评价<em>(30条)</em></a></li>
+										<li><a href="" title="comment-1">好评<em>(10条)</em></a></li>
+										<li><a href="" title="comment-2">中评<em>(2条)</em></a></li>
+										<li><a href="" title="comment-3">差评<em>(3条)</em></a></li>
+									</ul>
+								</div>
+								<div class="tab-con">
+									<div id="comment-0" class="item show">
+										<!--<div class="comment-item">-->
+											<!--<div class="user-column">-->
+												<!--<div class="user-info">-->
+													<!--<img src="img/b61.gif" alt=""/>-->
+													<!--<span>张一</span>-->
+												<!--</div>-->
+												<!--<div class="user-level">-->
+													<!--<span>银牌会员</span>-->
+												<!--</div>-->
+											<!--</div>-->
+											<!--<div class="comment-column">-->
+												<!--<div class="comment-star">-->
+													<!--<i></i>-->
+												<!--</div>-->
+												<!--<p>这是我写的评价这是我写的评价这是我写的评价这是我写的评价这是我写的评价这是我写的评价这是我写的评价这是我写的评价这是我写的评价这是我写的评价这是我写的评价这是我写的评价</p>-->
+												<!--<div class="pic-list">-->
+													<!--<a href=""></a>-->
+													<!--<a href=""></a>-->
+												<!--</div>-->
+												<!--<div class="comment-message">-->
+													<!--<div class="order-info">-->
+														<!--<span>妃子笑荔枝</span>-->
+														<!--<span>2斤装</span>-->
+														<!--<span>2017-05-25 12:05</span>-->
+													<!--</div>-->
+													<!--<div class="comment-op">-->
+														<!--<a href="">举报</a>-->
+														<!--<a href="">-->
+															<!--<i class="sprite-praise"></i>-->
+															<!--33-->
+														<!--</a>-->
+														<!--<a href="">-->
+															<!--<i class="sprite-comment"></i>-->
+															<!--1-->
+														<!--</a>-->
+													<!--</div>-->
+												<!--</div>-->
+											<!--</div>-->
+
+										<!--</div>-->
+									</div>
+									<div id="comment-1" class="item">
+										我是好评里面的模拟数据
+									</div>
+									<div id="comment-2" class="item">
+										我是中评里面的模拟数据
+									</div>
+									<div id="comment-3" class="item">
+										我是差评里面的模拟数据
+									</div>
+								</div>
+							</div>
+							<div class="recommend">
+								<span>
+									上一个:<a href="">包馅小小芝麻汤圆</a>
+								</span>
+								<span>
+									下一个:<a href=""> 虾仁小馄饨</a>
+								</span>
+							</div>
+						</div>
+						<div id="tab4" class="item">
+							<h2>买家问答</h2>
+							<div class="recommend">
+								<span>
+								上一个:<a href="">包馅小小芝麻汤圆</a>
+								</span>
+								<span>
+								下一个:<a href=""> 虾仁小馄饨</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部-->
+		<footer class="banxin">
+			<div class="f-left fl">
+				<img src="../../common/images/logo.png"/>
+			</div>
+			<div class="f-center fl">
+				<ul class="clearfix">
+					<li><a href="#">首页</a><i>|</i></li>
+					<li><a href="#">新品上架</a><i>|</i></li>
+					<li><a href="#">促销活动</a><i>|</i></li>
+					<li><a href="#">反馈信息</a></li>
+				</ul>
+				<div class="f-otherMess">
+					<p><span>客服热线 4006188527</span><span>仅限工作日 9:00-18:00 </span><span>节假日 10:00-17:00</span></p>
+					<p><span> 沪ICP备16031765号 </span><span>上海小池贸易有限公司</span><span><i><img src="../../common/images/xwcq.png"/></i>沪公网安备 31011402002870号&nbsp;&nbsp; Copyright © 2016 All Rights </span></p>
+				</div>
+			</div>
+			<div class="f-right fr">
+				<img src="../../common/images/ewm.jpg"/>
+			</div>
+		</footer>
+		<script src="../../common/js/common.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
