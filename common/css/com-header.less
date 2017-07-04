@@ -220,3 +220,103 @@ nav {
         }
     }
 }
+// 购物车样式======================
+.buycar-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10;
+    >.buycar-con{
+        width: 990px;
+        height: 300px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 15px;
+        padding: 0 20px;
+        >.title{
+            height: 75px;
+            line-height: 75px;
+            >h1{
+                color: #eb6100;
+                font-size: 22px;
+            }
+            >p{
+                >span:nth-of-type(1){
+                    color: #eb6100;
+                }
+            }
+        }
+        >.p-info{
+            height: 60px;
+            border-bottom: 1px solid #E1E1E1;
+            border-top: 2px solid #E1E1E1;
+            background-color: #F7F7F7;
+            line-height: 60px;
+            >label{
+                width: 185px;
+                box-sizing: border-box;
+                padding-left: 20px;
+                display: inline-block;
+                >img{
+                    width: 98px;
+                    height: 75px;
+                }
+            }
+            >span:nth-of-type(1){
+                display: inline-block;
+                width: 390px;
+            }
+            >span:nth-of-type(2){
+                display: inline-block;
+                width: 130px;
+            }
+            >span:nth-of-type(3){
+                display: inline-block;
+                width: 115px;
+            }
+            >span:nth-of-type(4){
+                display: inline-block;
+                width: 90px;
+            }
+        }
+        >.p-mess.p-info{
+            height: 110px;
+            line-height: 110px;
+            background-color: #fff;
+            border-top: none;
+            >span:nth-of-type(1){
+                line-height: 20px;
+            }
+            >span:nth-of-type(3){
+                >input{
+                    width: 45px;
+                    text-align: center;
+                    height: 23px;
+                    line-height: 23px;
+                    border: 1px solid #E1E1E1;
+                    margin: 0 5px;
+                }
+                >button{
+                    width: 21px;
+                    height: 23px;
+                    border: none;
+                    outline: none;
+                    border: 1px solid #E1E1E1;
+                    background-color: #fff;
+                    vertical-align: middle;
+                }
+            }
+            >span:nth-of-type(4){
+                color: #eb6100;
+            }
+        }
+    }
+}
