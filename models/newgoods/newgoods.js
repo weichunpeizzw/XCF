@@ -95,7 +95,7 @@ $(function () {
 			var str = '<li>' +
 				'<div class="goods-img">' +
 				'<a href="#">' +
-				'<img src="images/' + data[i][0] + '"/>' +
+				'<img src="../goodsPic/' + data[i][0] + '"/>' +
 				'</a>' +
 				'</div>' +
 				'<p class="goods-name"><a href="#">' + data[i][1] + '</a></p>' +
@@ -151,8 +151,9 @@ $(function () {
 	function queryProduct(arg) {
 		console.log(arg);
 		var res = [];
+		eval("var reg = /" + arg + "/g;"); 
 		for (var i = 0; i < data.length; i++) {
-			if (arg == data[i][1]) {
+			if (reg.test(data[i][1])) {
 				res.push(data[i]);
 			}
 		}

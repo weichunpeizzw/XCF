@@ -125,3 +125,26 @@
         }
     }
 }
+//修改边框颜色
+.detail-classify.ng-classify{
+    border: 1px solid #FF0000;
+    >ul{
+        >li{
+            >ul{
+                border:1px solid #ff0000;
+                border-left: none;
+                display: none;
+                line-height: 38px;
+                >li{
+                    
+                }
+            }
+            &:hover{
+                border: 1px solid #FF0000 !important;
+                >ul{
+                    display: block;
+                }
+            }
+        }
+    }
+}
