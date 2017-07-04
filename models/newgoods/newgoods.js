@@ -6,25 +6,21 @@ $(function () {
 		async: true,
 		dataType: 'json',
 		success: function (data) {
-			
 			var arr = [];
 			var ndata = [];
 			
 			for (var i in data) {
 				if (data[i].is_hot == '9') {
-					arr.push(data[i]);
-
-					
-					
+					arr.push(data[i]);	
 				}
 			}
-			
+			console.log(arr);
 			for (var k = 0; k < arr.length; k++) {
 				ndata[k] = [arr[k].pimage, arr[k].pname,arr[k].shop_price];
-				var str = '<li>' +
+				var str = '<li data='+arr[k].pid+'>' +
 					'<div class="goods-img">' +
 					'<a href="#">' +
-					'<img src="images/' + arr[k].pimage + '"/>' +
+					'<img src="../goodsPic/' + arr[k].pimage + '"/>' +
 					'</a>' +
 					'</div>' +
 					'<p class="goods-name"><a href="#">' + arr[k].pname + '</a></p>' +
@@ -34,11 +30,16 @@ $(function () {
 
 			}
 			console.log(ndata)
-			abc(ndata);
-
+			init(ndata);
+			//点击跳转 到详情页
+			$('.goods-show').on('click','li',function(){
+				var data=$(this).attr('data');
+				console.log(data);
+				window.location.href='../buy/buy.html?pid='+data;
+			})
 		}
 	});
-	function abc(data){
+	function init(data){
 		var data=data, 
 		lowPrice,
 		heighPrice,
