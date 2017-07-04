@@ -66,4 +66,11 @@ $(function () {
 		$('.h-register').html('退出');
 		flag = false;
 	}
+	//购物车的显示隐藏
+	$('.h-car').on('click',function(){
+		$('.buycar-bg').css('display','block');
+	})
+	$('.close').on('click',function(){
+		$('.buycar-bg').css('display','none');
+	})
 })
