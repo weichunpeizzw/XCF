@@ -17,7 +17,7 @@ $(function(){
 									+'<p>'+data[k].pname+'</p>'
 									+'<p><span>￥'+data[k].shop_price+'</span></p>'
 									+'</div>'
-									+'<a href="javascript:;" data-pId='+data[k].pid+'>立即购买</a></div>';
+									+'<a href="models/buy/buy.html?pid='+data[k].pid+'" data-pId='+data[k].pid+'>立即购买</a></div>';
 									$('.hotGoods').append(str1);
 									
 			
@@ -39,7 +39,7 @@ $(function(){
 							if(data[k].is_hot==='7')
 							{  var str1='';
 								str1=
-									'<li><a href="" class="fl"><img src="./models/goodsPic/'+data[k].pimage+'" alt="'+data[k].pname+'" /></a>'
+									'<li><a href="models/buy/buy.html?pid='+data[k].pid+'" class="fl"><img src="./models/goodsPic/'+data[k].pimage+'" alt="'+data[k].pname+'" /></a>'
 									+'<div class="priceLIst fl"><p><a href="">'+data[k].pname+'</a></p>'
 									+'价格<span>￥'+data[k].shop_price+'</span></div></li>';
 									$('.priceLeft').append(str1);
@@ -48,19 +48,20 @@ $(function(){
 							if(data[k].is_hot==='8')
 							{  var str1='';
 								str1=
-									'<li><a href="" class="fl"><img src="./models/goodsPic/'+data[k].pimage+'" alt="'+data[k].pname+'" /></a>'
+									'<li><a href="models/buy/buy.html?pid='+data[k].pid+'" class="fl"><img src="./models/goodsPic/'+data[k].pimage+'" alt="'+data[k].pname+'" /></a>'
 									+'<div class="priceLIst fl"><p><a href="">'+data[k].pname+'</a></p>'
 									+'价格<span>￥'+data[k].shop_price+'</span></div></li>';
 									$('.priceRight').append(str1);
 						}}
 						//给所有有pId的商品a标签添加点击事件
-						var alist=document.querySelectorAll('a[data-pId]')
-						for(var i=0;i<alist.length;i++){
-							alist[i].addEventListener('click',function(){
-								
-								$.cookie('pid',this.getAttribute('data-pId'))
-							})
-						}
+//						var alist=document.querySelectorAll('a[data-pId]')
+//						for(var i=0;i<alist.length;i++){
+//							alist[i].addEventListener('click',function(){
+//								
+//								$.cookie('pid',this.getAttribute('data-pId'))
+//							})
+//						}
+						
 						
 					
 						
@@ -84,7 +85,7 @@ function choose(num,where,data){
 								var str2='';
 								str2='<div><span>'+data.pname+'</span>'
 									+'<p>'+data.pdesc+'</p>'
-									+'<a href="javascript:;" data-pId='+data.pid+'><img src="./models/goodsPic/'+data.pimage+'" alt="'+data.pname+'" /></div></a>';
+									+'<a href="models/buy/buy.html?pid='+data.pid+'" data-pId='+data.pid+'><img src="./models/goodsPic/'+data.pimage+'" alt="'+data.pname+'" /></div></a>';
 							$(where).append(str2);
 							}
 }

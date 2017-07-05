@@ -29,6 +29,7 @@
 		<script src="../../common/js/less.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../common/js/jquery-2.2.0.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src='buy.js'></script>
+		<script src="../../common/js/jquery.cookie.js"></script>
 	</head>
 	<body>
 		<!--头部-->
@@ -76,7 +77,7 @@
 				<div class="nav-classify fl">
 					<h3>全部商品分类</h3>
 					<img src="../../common/images/classify.png" />
-					<div class="detail-classify">
+					<div class="detail-classify ng-classify">
 						<ul>
 							<li>
 								<a href="#">湾仔码头</a><b>></b>
@@ -104,14 +105,14 @@
 				</div>
 				<div class="nav-list fl">
 					<ul>
-						<li class="active">
-							<a href="#">首页</a>
+						<li>
+							<a href="../../index.html">首页</a>
 						</li><li>
-						<a href="#">新品上架</a>
-					</li><li>
+						<a href="../newgoods/newgoods.html">新品上架</a>
+					</li><li class="active">
 						<a href="#">促销活动</a>
 					</li><li>
-						<a href="#">反馈信息</a>
+						<a href="../feedback//feedback.html">反馈信息</a>
 					</li>
 					</ul>
 				</div>
@@ -132,17 +133,17 @@
 				<div class="product-show clearfix">
 					<div class="prodcuts-detailLeft fl">
 						<div id="smallBox">
-							<img src="img/1_jrqi.jpg" alt="" />
+							<img src="img/1_jrqi.jpg" alt="" id="smallImg"/>
 							<div id="mask">
 
 							</div>
 							<div id="bigBox">
-								<img src="img/2_jrqi.jpg" alt=""/>
+								<img src="img/2_jrqi.jpg" alt="" id="bigImg"/>
 							</div>
 						</div>
 					</div>
 					<div class="prodcuts-detailRight fl">
-						<h2>芝麻汤圆</h2>
+						<h2 id="p-name">芝麻汤圆</h2>
 						<div class="prodcutsPrice">
 							<p>价格:<span>¥90.00</span></p>
 						</div>
@@ -312,6 +313,7 @@
 			</div>
 		</footer>
 		<script src="../../common/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="buySend.js"></script>
 	</body>
 
 </html>

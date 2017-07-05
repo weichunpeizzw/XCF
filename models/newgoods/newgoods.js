@@ -1,52 +1,46 @@
 $(function () {
-
+	var n=0
 	$.ajax({
 		type: "get",
 		url: "newgoodes.php",
 		async: true,
 		dataType: 'json',
 		success: function (data) {
-
 			var arr = [];
+			var ndata = [];
+			
 			for (var i in data) {
 				if (data[i].is_hot == '9') {
-					arr.push(data[i]);
+					arr.push(data[i]);	
 				}
 			}
 			console.log(arr);
 			for (var k = 0; k < arr.length; k++) {
-				var str = '<li>' +
+				ndata[k] = [arr[k].pimage, arr[k].pname,arr[k].shop_price];
+				var str = '<li data='+arr[k].pid+'>' +
 					'<div class="goods-img">' +
 					'<a href="#">' +
-					'<img src="images/' + arr[k].pimage + '"/>' +
+					'<img src="../goodsPic/' + arr[k].pimage + '"/>' +
 					'</a>' +
 					'</div>' +
 					'<p class="goods-name"><a href="#">' + arr[k].pname + '</a></p>' +
 					'<p class="goods-price"><span>价格</span><span>&yen;' + arr[k].shop_price + '</span></p>' +
 					'</li>'
 				$(".goods-show ul").append($(str));
-				for(var j=0;j<arr.length;j++){
-					
+
 			}
-			}
-			
+			console.log(ndata)
+			init(ndata);
+			//点击跳转 到详情页
+			$('.goods-show').on('click','li',function(){
+				var data=$(this).attr('data');
+				console.log(data);
+				window.location.href='../buy/buy.html?pid='+data;
+			})
 		}
 	});
-	var data = [
-			['5_sx28.jpg', '虾饺', '19.80'],
-			['5_sx28.jpg', '芝麻汤圆', '7.70'],
-			['5_sx28.jpg', '火锅香肠', '9.90'],
-			['5_sx28.jpg', '香菇素菜包', '11.50'],
-			['5_sx28.jpg', '鱼丸', '9.5'],
-			['5_sx28.jpg', '包心贡丸', '9.50'],
-			['5_sx28.jpg', '原味飞饼', '10.50'],
-			['5_sx28.jpg', '白菜煎饺', '7.50'],
-			['5_sx28.jpg', '虾仁三鲜大混沌', '32.00'],
-			['5_sx28.jpg', '鲜美虾皇云吞', '32.00'],
-			['5_sx28.jpg', '芝麻汤圆', '7.50'],
-			['5_sx28.jpg', '南翔小笼包', '19.80'],
-			['5_sx28.jpg', '南翔春卷皮', '5.20'],
-		],
+	function init(data){
+		var data=data, 
 		lowPrice,
 		heighPrice,
 		productQuery;
@@ -94,13 +88,14 @@ $(function () {
 		}
 
 	})
+	
 	//页面渲染函数
 	function render(data) {
 		for (var i = 0; i < data.length; i++) {
 			var str = '<li>' +
 				'<div class="goods-img">' +
 				'<a href="#">' +
-				'<img src="images/' + data[i][0] + '"/>' +
+				'<img src="../goodsPic/' + data[i][0] + '"/>' +
 				'</a>' +
 				'</div>' +
 				'<p class="goods-name"><a href="#">' + data[i][1] + '</a></p>' +
@@ -139,23 +134,30 @@ $(function () {
 	}
 	//数据筛选
 	function priceFilter(arg1, arg2) {
+		arg1=arg1-0;
+		arg2=arg2-0;
 		var res = [];
+			console.log(data);
 		for (var i = 0; i < data.length; i++) {
-			if (arg1 <= data[i][2] && data[i][2] <= arg2) {
+			
+			if (arg1 <= data[i][2]-0 && data[i][2]-0 <= arg2) {
 				res.push(data[i]);
 			}
 		}
+		console.log(res);
 		return res;
 	}
 
 	function queryProduct(arg) {
 		console.log(arg);
 		var res = [];
+		eval("var reg = /" + arg + "/g;"); 
 		for (var i = 0; i < data.length; i++) {
-			if (arg == data[i][1]) {
+			if (reg.test(data[i][1])) {
 				res.push(data[i]);
 			}
 		}
 		return res;
 	}
+}
 })

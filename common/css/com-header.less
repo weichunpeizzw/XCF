@@ -150,7 +150,7 @@ nav {
                     >li {
                         height: 50px;
                         line-height: 50px;
-                        box-sizing: border-box;
+//                      box-sizing: border-box;
                         border-bottom: 1px solid #e9e9e9;
                         position: relative;
                         padding: 0 10px;
@@ -216,6 +216,157 @@ nav {
                 .active {
                     background-color: #F4000A;
                 }
+            }
+        }
+    }
+}
+// 购物车样式======================
+.buycar-bg{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10;
+    >.buycar-con{
+        width: 990px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 15px;
+        padding: 0 20px;
+        >.title{
+            height: 75px;
+            line-height: 75px;
+            >h1{
+                color: #eb6100;
+                font-size: 22px;
+            }
+            >p{
+                >span:nth-of-type(1){
+                    color: #eb6100;
+                }
+            }
+        }
+        >.p-info{
+            height: 60px;
+            border-bottom: 1px solid #E1E1E1;
+            border-top: 2px solid #E1E1E1;
+            background-color: #F7F7F7;
+            line-height: 60px;
+            >label{
+                width: 185px;
+                box-sizing: border-box;
+                padding-left: 20px;
+                display: inline-block;
+                >img{
+                    width: 98px;
+                    height: 75px;
+                }
+            }
+            >span:nth-of-type(1){
+                display: inline-block;
+                width: 390px;
+            }
+            >span:nth-of-type(2){
+                display: inline-block;
+                width: 130px;
+            }
+            >span:nth-of-type(3){
+                display: inline-block;
+                width: 115px;
+            }
+            >span:nth-of-type(4){
+                display: inline-block;
+                width: 90px;
+            }
+        }
+        >.p-mess.p-info{
+            height: 110px;
+            line-height: 110px;
+            background-color: #fff;
+            border-top: none;
+            font-size: 14px;
+            >span:nth-of-type(1){
+                line-height: 20px;
+            }
+            >span:nth-of-type(3){
+                >input{
+                    width: 45px;
+                    text-align: center;
+                    height: 23px;
+                    line-height: 23px;
+                    border: 1px solid #E1E1E1;
+                    margin: 0 5px;
+                }
+                >button{
+                    width: 21px;
+                    height: 23px;
+                    border: none;
+                    outline: none;
+                    border: 1px solid #E1E1E1;
+                    background-color: #fff;
+                    vertical-align: middle;
+                }
+            }
+            >span:nth-of-type(4){
+                color: #eb6100;
+            }
+        }
+        >.p-account.p-info{
+            height: 100px;
+            padding-top: 20px;
+            box-sizing: border-box;
+           border-top: none; 
+           background-color: #fff;
+           >span{
+               cursor: pointer;
+           }
+           >span:nth-of-type(3){
+               font-size: 16px;
+               cursor: auto;
+           }
+           >span:nth-of-type(4){
+               font-size: 16px;
+               color: #eb6100;
+               cursor: auto;
+           }
+           >span:nth-of-type(5){
+               width: 120px;
+               height: 50px;
+               font-size: 22px;
+               color: #fff;
+               text-align: center;
+               line-height: 50px;
+               margin-left: -60px;
+               background-color: #eb6100;
+               display: inline-block;
+           }
+        }
+        >.close{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            right: -40px;
+            top: 20px;
+            background-color: rgba(0,0,0,.6);
+            >a{
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                background: url(../images/popclose.png) no-repeat;
+                background-position: center;
+                padding: 8px 8px;
+                box-sizing: border-box;
+            }
+            &:hover a{
+                transform-origin: 50% 50% 0;
+                transform: rotate(180deg);
+                transition: all .5s;
             }
         }
     }
