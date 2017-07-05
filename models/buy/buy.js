@@ -14,7 +14,6 @@ $(function(){
         }else{
             alert("请先选择:规格!");
         }
-
         $(".controlNumber input").val(i);
     })
 
@@ -65,7 +64,7 @@ $(function(){
         })
 
 
-
+        //tab切换
         $('#tabs a').click(function(e) {
             e.preventDefault();
             $('#tabs li').removeClass("current");
@@ -180,11 +179,18 @@ $(function(){
         $("#bigBox img").css("left",- rate * maskX+"px");
         $("#bigBox img").css("top",- rate * maskY+"px");
     })
+
+
     $("#smallBox").on("mouseout",function(){
         $("#mask").css("display","none");
         $("#bigBox").css("display","none");
     })
 
+    //点击我要提问 切换大盒子
+    console.log($("#tab4 .Myask"));
+    $("#tab4 .Myask").on("click",function(){
+        $(".askquestion").toggleClass("show");
+    })
 })
 
 
