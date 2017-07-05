@@ -1,6 +1,6 @@
 $(function(){
 			$.ajax({
-					type: 'get',
+					type: 'post',
 					url: 'ishow.php',
 					dataType: 'json',
 					success: function(data) {							
