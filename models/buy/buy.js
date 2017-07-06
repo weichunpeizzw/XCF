@@ -210,6 +210,7 @@ $(function(){
         console.log(price.slice(1));
         console.log(number);
         console.log(guige);
+        console.log(price.slice(1) * number);
 
         var obj={
             "img":img,

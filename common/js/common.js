@@ -82,5 +82,27 @@ $(function () {
 	$("#checkall").on('click',function(){
 		console.log($(this).prop('checked'));
 		$('.p-mess').find('input[type=checkbox]').prop('checked',$(this).prop('checked'));
-	})	
+	})
+
+
+
+	var read=JSON.parse(sessionStorage.getItem('key'));
+
+	console.log(read);
+
+	var str='';
+	str+='<label>'+
+		'<input type="checkbox" value="全选"><img src="'+read.img+'" alt="">'+
+		'</label>'+
+		'<span>'+read.title+'&nbsp;'+read.guige+'</span>'+
+		'<span>'+read.price+'</span>'+
+		'<span><button>-</button><input type="text" value="'+read.number+'"><button>+</button></span>'+
+		'<span>'+read.price.slice(1)*read.number+'</span>'+
+		'<span>移除</span>'
+
+	$(".p-account span:eq(3)").html(read.price.slice(1)*read.number);
+	$(".p-account span:eq(4)").html("结算("+read.number+")");
+	$(".h-car .colorRed").html(read.number);
+	$(".p-mess").append(str);
+
 })
