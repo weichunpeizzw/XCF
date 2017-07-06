@@ -74,4 +74,13 @@ $(function () {
 	$('.close').on('click',function(){
 		$('.buycar-bg').css('display','none');
 	})
+	//购物车全选功能的实现
+	$("#check").on('click',function(){
+		console.log($(this).prop('checked'));
+		$('.p-mess').find('input[type=checkbox]').prop('checked',$(this).prop('checked'));
+	});
+	$("#checkall").on('click',function(){
+		console.log($(this).prop('checked'));
+		$('.p-mess').find('input[type=checkbox]').prop('checked',$(this).prop('checked'));
+	})	
 })
