@@ -39,6 +39,7 @@ $(function () {
 		if (flag) {
 			$('.mask').css('display', 'block');
 			$('.mask').load('models/login/login.html');
+//			$('.mask').load('../login/login.html');
 		}
 		if (!flag) {
 			console.log(111);

@@ -5,8 +5,9 @@ $(function() {
 	//获取点击id
 	$.ajax({
 		type: 'get',
-		dataType: 'json',
-		url: "buy.php",
+		dataType: 'jsonp',
+		jsonp:"jsoncallback", 
+		url: "http://lihuanting.gz01.bdysite.com/project/xcf/models/buy/buy_api.php",
 		data: {
 			pid: pid
 		},

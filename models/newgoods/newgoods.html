@@ -12,6 +12,7 @@
 		<script src="../../common/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+		<!--<div class="mask"></div>-->
 		<!--公共头部 begin===============-->
 		<header>
 			<div class="banxin h-content">
@@ -163,6 +164,50 @@
 				<img src="../../common/images/ewm.jpg"/>
 			</div>
 		</footer>
+		<!--增加购物车-->
+		<div class="buycar-bg">
+		<div class="buycar-con">
+			<div class="title">
+				<h1 class="fl">购物车</h1>
+				<p class="fr"><span>1.结算商品</span>----- <span>2.确认订单----- <span>3.支付完成</span></span>
+				</p>
+			</div>
+			<div class="p-info">
+				<label for="check">
+					<input type="checkbox" value="全选" id="check">全选
+				</label>
+				<span>商品</span>
+				<span>单价(&yen;)</span>
+				<span>数量</span>
+				<span>金额(&yen;)</span>
+				<span>操作</span>
+			</div>
+			<div class="p-mess p-info">
+				<label>
+					<input type="checkbox" value="全选" id="check"><img src="common/images/1_jrqi.jpg" alt="">
+				</label>
+				<span>芝麻汤圆&nbsp;500g*2箱</span>
+				<span>(&yen;)90.00</span>
+				<span><button>-</button><input type="text" value="1"><button>+</button></span>
+				<span>(&yen;)90.00</span>
+				<span>移除</span>
+			</div>
+			<div class="p-account p-info">
+				<label for="checkall">
+					<input type="checkbox" value="全选" id="checkall">全选
+				</label>
+				<span>删除选中的商品</span>
+				<span>继续购物</span>
+				<span>总共(不含运费):</span>
+				<span>&yen;97</span>
+				<span>结算(2)</span>
+			</div>
+			<div class="close">
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+	
+	</div>
 		<!--公共尾部 end===============-->
 		<script src="../../common/js/common.js" type="text/javascript" charset="utf-8"></script>
 		<script src="newgoods.js" type="text/javascript" charset="utf-8"></script>
