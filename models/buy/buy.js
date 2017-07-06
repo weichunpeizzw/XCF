@@ -36,6 +36,8 @@ $(function(){
         }
     })
 
+
+    var guige;
     $(function(){
         $(".prodcutsSize a").click(function(e){
             e.preventDefault();
@@ -61,6 +63,8 @@ $(function(){
             }else{
                 $(".prodcutsPay>span").css("cursor","not-allowed");
             }
+
+            guige=$(this).html()
         })
 
 
@@ -203,13 +207,40 @@ $(function(){
 
         console.log(img);
         console.log(title);
-        console.log(price);
+        console.log(price.slice(1));
         console.log(number);
+        console.log(guige);
 
+        var obj={
+            "img":img,
+            "title":title,
+            "price":price.slice(1),
+            "number":number,
+            "guige":guige
+        }
 
+        var str='';
+        str+='<label>'+
+            '<input type="checkbox" value="全选"><img src="'+img+'" alt="">'+
+            '</label>'+
+            '<span>'+title+'&nbsp;'+guige+'</span>'+
+            '<span>'+price+'</span>'+
+            '<span><button>-</button><input type="text" value="'+number+'"><button>+</button></span>'+
+            '<span>'+price.slice(1)*number+'</span>'+
+            '<span>移除</span>'
 
+        $(".p-account span:eq(3)").html(price.slice(1)*number);
+        $(".p-account span:eq(4)").html("结算("+number+")");
+        $(".h-car .colorRed").html(number);
+        $(".p-mess").append(str);
 
+        console.log(JSON.stringify(obj));
+        sessionStorage.setItem("key", JSON.stringify(obj));
     })
+
+
+
+
 })
 
 
