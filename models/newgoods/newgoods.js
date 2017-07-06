@@ -5,8 +5,7 @@ $(function() {
 		url: 'http://lihuanting.gz01.bdysite.com/project/xcf/ishow_api.php',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
-		async: true,
-		dataType: 'json',
+
 		success: function(data) {
 			var arr = [];
 			var ndata = [];
