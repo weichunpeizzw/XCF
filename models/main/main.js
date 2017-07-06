@@ -3,6 +3,10 @@ $(function(){
 					type: 'post',
 					url: 'ishow.php',
 					dataType: 'json',
+					// type: 'get',
+					// url: 'http://lihuanting.gz01.bdysite.com/project/xcf/ishow_api.php',
+					// dataType: 'jsonp',
+					// jsonp:"jsoncallback", 
 					success: function(data) {							
 						for(var k in data) {
 							

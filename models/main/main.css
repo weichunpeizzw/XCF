@@ -47,6 +47,16 @@
 	background-color:rgba(255,0,0,0.1);
 	
 }
+
+/*.htmleaf-container{
+	position: relative;
+    height: 500px;
+}
+#sections-wrapper{
+	    width: 100%;
+}*/
+/*修复轮播图*/
+
 .hotGoods .hotGoodsTitle a:after{
 	content: '';
 	width: 23px;
