@@ -191,6 +191,25 @@ $(function(){
     $("#tab4 .Myask").on("click",function(){
         $(".askquestion").toggleClass("show");
     })
+
+    //选择规格和数量 加到购物车中
+    $(".prodcuts-detailRight .prodcutsPay span").on('click',function(){
+        console.log(1);
+        var img =$(".prodcuts-detailLeft #smallBox").find("img").attr("src");
+
+        var title=$(".prodcuts-detailRight #p-name").html();
+        var price=$('.prodcutsPrice p span').html();
+        var number=$(".controlNumber").find("input").val();
+
+        console.log(img);
+        console.log(title);
+        console.log(price);
+        console.log(number);
+
+
+        
+
+    })
 })
 
 
