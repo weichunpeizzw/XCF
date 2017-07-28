@@ -89,7 +89,7 @@ $(function () {
 	var read=JSON.parse(sessionStorage.getItem('key'));
 
 	console.log(read);
-
+if(read){ 
 	var str='';
 	str+='<label>'+
 		'<input type="checkbox" value="全选"><img src="'+read.img+'" alt="">'+
@@ -104,5 +104,7 @@ $(function () {
 	$(".p-account span:eq(4)").html("结算("+read.number+")");
 	$(".h-car .colorRed").html(read.number);
 	$(".p-mess").append(str);
+}
+	
 
 })
